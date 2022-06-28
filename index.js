@@ -1,3 +1,5 @@
+const path = require("node:path");
+
 // Initiate server
 const express = require("express");
 const app = express();
