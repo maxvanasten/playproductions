@@ -1,0 +1,22 @@
+products
+- reference
+- name
+- description
+- price
+- sales
+
+bookings
+- reference
+- phoneNumber
+- emailAddress
+- address
+- type
+- deposit
+- date
+
+orders
+- reference
+- products
+- date
+- total
+- bookingReference
