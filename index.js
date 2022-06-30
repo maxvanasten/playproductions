@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const path = require("node:path");
 
 // Initiate server
