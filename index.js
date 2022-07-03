@@ -35,23 +35,6 @@ app.get("/", function (req, res) {
   res.render("website/index");
 });
 
-app.get("/bookings", function (req, res) {
-  res.render("website/bookings");
-});
-
-app.get("/reviews", function (req, res) {
-  res.render("website/reviews");
-});
-
-app.get("/blog", function (req, res) {
-  res.render("website/blog");
-});
-
-// Serve pos using EJS
-app.get("/pos", function (req, res) {
-  res.render("pos/index");
-});
-
 // Run server
 app.listen(80);
 console.log("Server is listening on port 80");
