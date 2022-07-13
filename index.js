@@ -37,6 +37,10 @@ app.get("/", function (req, res) {
   res.render("website/index");
 });
 
+app.get("/pos", function (req, res) {
+  res.render("pos/login");
+});
+
 app.get("/pos/:authKey", function (req, res) {
   //Check if authKey matches current generated authkey
   if (req.params.authKey == AUTHKEY) {

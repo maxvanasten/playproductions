@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      function login() {
+        let key = document.getElementById("authkey").innerHTML;
+        window.location.href = `http://play-productions.nl/pos/${key}`;
+      }
+    </script>
+
+    <title>POS Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Auth Key:</h3>
+      <input type="text" id="authkey" />
+      <button onclick="login()">Log in</button>
+    </div>
+  </body>
+</html>
