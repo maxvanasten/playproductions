@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const path = require("node:path");
 
+let AUTHKEY = "";
+
 // Initiate server
 const express = require("express");
 const app = express();
@@ -35,6 +37,23 @@ app.get("/", function (req, res) {
   res.render("website/index");
 });
 
+app.get("/pos/:authKey", function (req, res) {
+  //Check if authKey matches current generated authkey
+  res.render("pos/index");
+});
+
+const generateAuthKey = () => {
+  return "_" + Math.random().toString(16).slice(2);
+};
+
+// Generate a new authKey every hour
+setInterval(() => {
+  AUTHKEY = generateAuthKey();
+}, 1000 * 60 * 60);
+
+AUTHKEY = generateAuthKey();
+
 // Run server
 app.listen(80);
 console.log("Server is listening on port 80");
+console.log("Authkey: " + AUTHKEY);
