@@ -1,6 +1,6 @@
 {
-    "host": "localhost",
-    "user": "root",
-    "password": "Maxonline1",
-    "database": "playproductions"
+  "host": "localhost",
+  "user": "pp",
+  "password": "Maxonline1",
+  "database": "playproductions"
 }
