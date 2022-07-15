@@ -2,6 +2,16 @@
 const path = require("node:path");
 
 let AUTHKEY = "";
+const generateAuthKey = () => {
+  return "_" + Math.random().toString(16).slice(2);
+};
+
+// Generate a new authKey every hour
+setInterval(() => {
+  AUTHKEY = generateAuthKey();
+}, 1000 * 60 * 60);
+
+AUTHKEY = generateAuthKey();
 
 // nodemailer stuff
 const nodemailer = require("nodemailer");
@@ -74,17 +84,6 @@ app.get("/pos/:authKey", function (req, res) {
     res.render("other/failed_login");
   }
 });
-
-const generateAuthKey = () => {
-  return "_" + Math.random().toString(16).slice(2);
-};
-
-// Generate a new authKey every hour
-setInterval(() => {
-  AUTHKEY = generateAuthKey();
-}, 1000 * 60 * 60);
-
-AUTHKEY = generateAuthKey();
 
 // Run server
 app.listen(80);
