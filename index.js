@@ -3,6 +3,31 @@ const path = require("node:path");
 
 let AUTHKEY = "";
 
+// nodemailer stuff
+const nodemailer = require("nodemailer");
+const mailSettings = require("./configuration/email.json");
+let transporter;
+async function initiateMail() {
+  transporter = nodemailer.createTransport({
+    host: "ssl0.ovh.net",
+    port: 465,
+    secure: true,
+    auth: {
+      user: mailSettings.user,
+      pass: mailSettings.pass,
+    },
+  });
+
+  let info = await transporter.sendMail({
+    from: '"Max @ Mvasten" <max@mvasten.nl>', // sender address
+    to: "max@worthy.technology", // list of receivers
+    subject: "Hello ✔", // Subject line
+    text: "Hello world?", // plain text body
+    html: "<b>Hello world?</b>", // html body
+  });
+}
+initiateMail().catch(console.error);
+
 // Initiate server
 const express = require("express");
 const app = express();
