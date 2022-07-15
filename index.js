@@ -9,9 +9,9 @@ const mailSettings = require("./configuration/email.json");
 let transporter;
 async function initiateMail() {
   transporter = nodemailer.createTransport({
-    host: "ssl0.ovh.net",
-    port: 465,
-    secure: true,
+    host: "pro1.mail.ovh.net",
+    port: 587,
+    secure: false,
     auth: {
       user: mailSettings.user,
       pass: mailSettings.pass,
