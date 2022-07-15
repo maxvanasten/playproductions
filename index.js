@@ -19,11 +19,11 @@ async function initiateMail() {
   });
 
   let info = await transporter.sendMail({
-    from: '"Max @ Mvasten" <m.ax@mvasten.nl>', // sender address
+    from: '"PP Authentication" <m.ax@mvasten.nl>', // sender address
     to: "max@worthy.technology", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
+    subject: "POS/ADB Authkey", // Subject line
+    text: `${AUTHKEY}`, // plain text body
+    html: `<b>${AUTHKEY}</b>`, // html body
   });
 }
 initiateMail().catch(console.error);
