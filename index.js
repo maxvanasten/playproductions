@@ -19,7 +19,7 @@ async function initiateMail() {
   });
 
   let info = await transporter.sendMail({
-    from: '"Max @ Mvasten" <max@mvasten.nl>', // sender address
+    from: '"Max @ Mvasten" <m.ax@mvasten.nl>', // sender address
     to: "max@worthy.technology", // list of receivers
     subject: "Hello ✔", // Subject line
     text: "Hello world?", // plain text body
